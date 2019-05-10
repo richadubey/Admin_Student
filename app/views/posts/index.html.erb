@@ -1,0 +1,22 @@
+<div class="test">
+   <%= form_for @post, url: posts_path(page: @page) ,remote: true do |f| %>
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_field :text %>
+    </p> 
+    
+
+     </p>
+    <p>
+      <%= f.submit 'submit '%>
+    </p>
+  <% end %>
+
+  <h1 align="center">Listing Post</h1></br>
+
+  <div id="page_paginate">
+  
+    <%= render partial: 'posts/posts', locals: {post: @posts} %>
+     
+  </div>
+</div>

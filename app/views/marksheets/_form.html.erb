@@ -1,0 +1,33 @@
+ <%= form_for(Marksheet.new, remote: true) do |f| %>
+      
+       <div class="form-group" align="center">
+        <%= f.label :Roll_No %>
+        <%= f.text_field :roll_no %>
+      </div>
+
+      <div class="form-group" align="center">
+        <%= f.label :Student %>
+        <%= f.select :student_id, Student.all.map{|s| [s.first_name,s.last_name,s.id]}, :prompt => "Select a Student" %>
+      </div>
+       <div class="form-group" align="center">
+        <%= f.label :Physics %>
+        <%= f.text_field :physics %>
+       </div>
+   
+
+       <div class="form-group" align="center">
+        <%= f.label :Chemistry %>
+        <%= f.text_field :chemistry %>
+       </div>
+
+       <div class="form-group " align="center">
+        <%= f.label :Mathematics %>
+        <%= f.text_field :mathematics %>
+       </div>
+
+      <div class="form-group " align="center">
+        <%= f.submit :Submit, class: 'btn btn-success' %>
+      </div>
+  
+  <% end %>
+

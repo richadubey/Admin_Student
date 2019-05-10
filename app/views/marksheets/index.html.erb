@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Students</h1>
+
+<table class="table" align ="center" >
+  <thead>
+    <tr>
+      <th>Roll_no</th>
+      <th>Physics</th>
+      <th>Chemistry</th>
+      <th>Mathematics</th>
+      <th>Student Name</th>
+    
+      
+      <th align="center">Actions</th>
+
+      <th colspan = "1 "></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marksheets.each do |marksheet| %>
+      <tr>
+        <td><%= marksheet.roll_no %></td>
+        <td><%= marksheet.physics %></td>
+        <td><%= marksheet.chemistry %></td>
+        <td><%= marksheet.mathematics %></td>
+        <td><%= marksheet.student.first_name %></td>
+        
+        <td><%= link_to 'Show', marksheet_path(marksheet) , class: 'btn btn-info' %></td>
+        <td><%= link_to 'Edit', edit_marksheet_path(marksheet), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', marksheet_path(marksheet), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Marksheet', new_marksheet_path %>
