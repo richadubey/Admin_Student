@@ -1,23 +1,16 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  devise_for :users
+ 
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+ 
+  devise_scope :user do
+      get '/admin', to: 'users/sessions#new'
+  end
 
   root 'welcome#index'
-  resources :posts do
-    get 'likes' 
-    get 'unlike' 
-  end
-  resources :comments do
-  	get 'likes' 
-    get 'unlike' 
-  end
   
-  resources :roles 
-  resources :colleges do
-    post 'search',  :on => :collection
-  end
-  resources :students
-  resources :marksheets
   resources :roles
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  resources :programs
+  resources :calendars
+
 end

@@ -1,9 +1,15 @@
 class RolesController < ApplicationController
+
 	def new
 		 @role = Role.new
 	end
+
 	def index
-     @roles = Role.all
+		if params[:name].present?
+			@roles = Role.where(name: params[:name])
+		else
+			@roles = Role.all
+		end 
 	end
   
   def create

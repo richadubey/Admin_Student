@@ -16,6 +16,19 @@
 
 //= require jquery
 //= require bootstrap-sprockets
+//= require js/aos.js
+//= require js/jquery-3.3.1.min.js
+//= require js/jquery-migrate-3.0.1.min.js
+//= require js/jquery-ui.js
+//= require js/popper.min.js
+//= require js/bootstrap.min.js
+//= require js/owl.carousel.min.js
+//= require js/jquery.stellar.min.js
+//= require js/jquery.countdown.min.js
+//= require js/jquery.magnific-popup.min.js
+//= require js/bootstrap-datepicker.min.js
+
+
 
 //= require_tree .
 $(document).on('click','button','.post_like', function(){
@@ -23,44 +36,5 @@ $(document).on('click','button','.post_like', function(){
 	// alert(post_id)
 	$(this).next('.comments').toggle('show');
 });
-// $(document).ready(function() {
-//   $('.pagination > a').attr('data-remote', 'true');
-// });
 
-// $(document).on('click', '.post_like', function(){
-// 	post_id = this.dataset.postId
 
-// 	$.ajax({
-// 		url: "posts/"+post_id+"/likes",
-// 		method: 'get', 
-// 		success: function(result){
-			
-
-		
-// 	  	alert('in success')
-// 	  	 $('.post_like').text('Unlike')
-// 		},
-// 		error: function(error) {
-// 			alert('calling like function')
-// 		}
-// 	});
-// })
-
-// $(document).on('click', '.post_unlike', function(){
-// 	post_id = this.dataset.postId
-
-// 	$.ajax({
-// 		url: "posts/"+post_id+"/unlike",
-// 		method: 'get', 
-// 		success: function(result){
-			
-
-		
-// 	  	alert('in success')
-// 	  	 $('.post_unlike').text('like')
-// 		},
-// 		error: function(error) {
-// 			alert('calling dislike function')
-// 		}
-// 	});
-// })
